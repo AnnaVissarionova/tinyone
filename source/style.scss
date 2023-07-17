@@ -3,7 +3,7 @@ $primary-text-color: #010101;
 $secondary-text-color: #898989;
 $secondary-text-color_tint: #313841;
 $icons-color: $primary-text-color;
-$content-width: 960px;
+$content-width: 100vw * 0.7;
 
 %section-title {
     font-family: $basic-font-stack;
@@ -19,7 +19,7 @@ $content-width: 960px;
 }
 %item-title {
     font-family: $basic-font-stack;
-    font-weight: 400;
+    font-weight: bold;
     color: $primary-text-color;
     font-size: 24px;
 }
@@ -34,4 +34,177 @@ $content-width: 960px;
     font-weight: 400;
     color: $secondary-text-color_tint;
     font-size: 14px;
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #fcdb00;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+//ужасное решение
+$header-height: 70px;
+.header-inner {
+    max-width: $content-width;
+    width: 100%;
+    height: $header-height;
+    padding: 40px 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .header__nav {
+        flex: 1 1 0;
+        font-size: 24px;
+        color: $primary-text-color;
+    }
+    .header__logo {
+        flex: 1 1 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        i {
+            color: $primary-text-color;
+            font-size: 43px;
+            margin-right: 5px;
+        }
+        .header__logo__title{
+            @extend %section-title;
+            margin-left: 5px;
+        }
+    }
+    .header-socials {
+        flex: 1 1 0;
+        display: flex;
+        justify-content: end;
+        i {
+            font-size: 24px;
+            color: $primary-text-color;
+            margin-left: 10px;
+        }
+    }
+}
+
+.intro {
+    background-color: #fcdb00;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.intro-inner {
+    max-width: $content-width;
+    width: 100%;
+    height: calc(100vh - $header-height);
+    margin: 0;
+   // padding: 0 $content-width * 0.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .intro__heading {
+        max-width: $content-width * 0.5;
+        font-family: $basic-font-stack;
+        font-weight: bold;
+        font-size: 48px;
+        color: $primary-text-color;
+        text-align: center;
+        margin: 0;
+    }
+    .intro__subtitle {
+        max-width: $content-width * 0.4;
+        @extend  %section-subtitle;
+        color: $primary-text-color;
+        text-align: center;
+    }
+    .intro__btn {
+        width: 20%;
+        height: 2.5em;
+        border: 3px solid $primary-text-color;
+        text-transform: uppercase;
+        text-decoration: none;
+        text-align: center;
+        line-height: 2.5em;
+        @extend %item-title;
+        font-weight: bold;
+        background: #00000000;
+        margin-top: 20px;
+        
+    }
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.features-inner {
+    max-width: $content-width;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    margin: 0;
+    .features-heading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        .features-heading__title {
+            @extend %section-title;
+            text-align: center;
+            margin: 0;
+        }
+        .features-heading__subtitle {
+            @extend %section-subtitle;
+            width: 70%;
+            text-align: center;
+        }
+    }
+    .features-grid {
+        display: grid;
+        grid-template-columns: 7% 23% 7% 23% 7% 23%;
+        column-gap: 15px;
+        row-gap: 4em;
+        justify-content: center;
+
+        align-content: center;
+        .grid__item {
+            text-align: center;
+            i {
+                font-size: 50px;
+            }
+            
+        }
+        .grid__item__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-items: center;
+            align-content: center;
+            .grid__item__title {
+                @extend %item-title;
+                margin: 0;
+                vertical-align: top;
+            }
+            .grid__item__subtitle {
+                @extend %item-subtitle;
+                margin: 0;
+                vertical-align: top;
+            }
+        }
+    }
+
 }
