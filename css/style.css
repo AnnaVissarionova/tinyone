@@ -86,7 +86,7 @@ h6 {
   font-weight: 400;
 }
 
-.pricing-inner .pricing-cols .pricing__column .pricing__column__price .price, .pricing-inner .pricing-heading .pricing-heading__title, .features-inner .features-heading .features-heading__title, .header-inner .header__logo .header__logo__title {
+.pricing-inner .pricing-cols .pricing__column .column__item .pricing__column__price .price, .pricing-inner .pricing-heading .pricing-heading__title, .features-inner .features-heading .features-heading__title, .header-inner .header__logo .header__logo__title {
   font-family: "Source Sans 3", sans-serif;
   font-weight: bold;
   color: #010101;
@@ -100,14 +100,14 @@ h6 {
   font-size: 20px;
 }
 
-.pricing-inner .pricing-cols .pricing__column .pricing__column__btn, .pricing-inner .pricing-cols .pricing__column .pricing__column__text h3, .features-inner .features-grid .grid__item__text .grid__item__title, .intro-inner .intro__btn {
+.pricing-inner .pricing-cols .pricing__column .column__item .pricing__column__btn, .pricing-inner .pricing-cols .pricing__column .column__item .pricing__column__text h3, .features-inner .features-grid .grid__item__text .grid__item__title, .intro-inner .intro__btn {
   font-family: "Source Sans 3", sans-serif;
   font-weight: bold;
   color: #010101;
   font-size: 24px;
 }
 
-.pricing-inner .pricing-cols .pricing__column .pricing__column__price .limit, .pricing-inner .pricing-cols .pricing__column .pricing__column__text h4 {
+.pricing-inner .pricing-cols .pricing__column .column__item .pricing__column__price .limit, .pricing-inner .pricing-cols .pricing__column .column__item .pricing__column__text h4 {
   font-family: "Source Sans 3", sans-serif;
   font-weight: 400;
   color: #898989;
@@ -134,8 +134,7 @@ header {
 }
 
 .header-inner {
-  max-width: 70vw;
-  width: 100%;
+  width: 941px;
   height: 70px;
   padding: 40px 0 0;
   display: -webkit-box;
@@ -211,10 +210,9 @@ header {
 }
 
 .intro-inner {
-  max-width: 70vw;
-  width: 100%;
-  height: calc(100vh - 70px);
-  margin: 0;
+  width: 510px;
+  height: 740px;
+  padding: 170px 0 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -230,7 +228,6 @@ header {
           align-items: center;
 }
 .intro-inner .intro__heading {
-  max-width: 35vw;
   font-family: "Source Sans 3", sans-serif;
   font-weight: bold;
   font-size: 48px;
@@ -239,19 +236,18 @@ header {
   margin-bottom: 25px;
 }
 .intro-inner .intro__subtitle {
-  max-width: 28vw;
   color: #010101;
   text-align: center;
   margin: 25px 0px;
 }
 .intro-inner .intro__btn {
-  width: 20%;
-  height: 2.5em;
+  width: 255px;
+  height: 50px;
   border: 3px solid #010101;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  line-height: 2.5em;
+  line-height: 50px;
   font-weight: bold;
   background: rgba(0, 0, 0, 0);
   margin-top: 25px;
@@ -264,11 +260,11 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100vh;
 }
 
 .features-inner {
-  max-width: 70vw;
+  width: 941px;
+  padding: 90px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -281,7 +277,6 @@ header {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  margin: 0;
 }
 .features-inner .features-heading {
   display: -webkit-box;
@@ -299,7 +294,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 50px 0 80px;
+  margin: 0 0 5%;
 }
 .features-inner .features-heading .features-heading__title {
   text-align: center;
@@ -324,7 +319,7 @@ header {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  margin: 60px 0 100px;
+  margin: 60px 0 0px;
   padding: 0 20px;
 }
 .features-inner .features-grid .grid__item {
@@ -364,11 +359,11 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100vh;
 }
 
 .pricing-inner {
-  max-width: 70vw;
+  padding: 90px 0;
+  width: 941px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -381,7 +376,6 @@ header {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  margin: 60px 0;
 }
 .pricing-inner .pricing-heading {
   display: -webkit-box;
@@ -403,7 +397,6 @@ header {
 }
 .pricing-inner .pricing-heading .pricing-heading__title {
   text-align: center;
-  margin-bottom: 10px;
 }
 .pricing-inner .pricing-heading .pricing-heading__subtitle {
   width: 70%;
@@ -421,8 +414,15 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 0 -12.5px;
 }
 .pricing-inner .pricing-cols .pricing__column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 12.5px;
+}
+.pricing-inner .pricing-cols .pricing__column .column__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -433,10 +433,9 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 15px;
   width: 280px;
 }
-.pricing-inner .pricing-cols .pricing__column .pricing__column__photo {
+.pricing-inner .pricing-cols .pricing__column .column__item .pricing__column__photo {
   background-color: #ebebeb;
   border-radius: 50%;
   width: 100px;
@@ -444,28 +443,32 @@ header {
   text-align: center;
   line-height: 100px;
 }
-.pricing-inner .pricing-cols .pricing__column .pricing__column__photo i {
+.pricing-inner .pricing-cols .pricing__column .column__item .pricing__column__photo i {
   font-size: 40px;
   color: #010101;
   vertical-align: middle;
 }
-.pricing-inner .pricing-cols .pricing__column .pricing__column__text {
-  text-align: center;
+.pricing-inner .pricing-cols .pricing__column .column__item .pricing__column__text {
   margin: 20px 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
-.pricing-inner .pricing-cols .pricing__column .pricing__column__text h3 {
+.pricing-inner .pricing-cols .pricing__column .column__item .pricing__column__text h3 {
   margin: 0px 0 20px;
-}
-.pricing-inner .pricing-cols .pricing__column .pricing__column__text h4 {
-  padding: 0 30px;
-}
-.pricing-inner .pricing-cols .pricing__column .pricing__column__price {
   text-align: center;
 }
-.pricing-inner .pricing-cols .pricing__column .pricing__column__price .price {
+.pricing-inner .pricing-cols .pricing__column .column__item .pricing__column__text h4 {
+  padding: 0 30px;
+  text-align: justify;
+}
+.pricing-inner .pricing-cols .pricing__column .column__item .pricing__column__price {
+  text-align: center;
+}
+.pricing-inner .pricing-cols .pricing__column .column__item .pricing__column__price .price {
   text-transform: uppercase;
 }
-.pricing-inner .pricing-cols .pricing__column .pricing__column__price .price::after {
+.pricing-inner .pricing-cols .pricing__column .column__item .pricing__column__price .price::after {
   display: block;
   content: "";
   background: #010101;
@@ -473,7 +476,7 @@ header {
   width: 50px;
   margin: 8px auto;
 }
-.pricing-inner .pricing-cols .pricing__column .pricing__column__btn {
+.pricing-inner .pricing-cols .pricing__column .column__item .pricing__column__btn {
   width: 55%;
   height: 2.5em;
   border: 3px solid #010101;

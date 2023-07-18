@@ -94,7 +94,7 @@ $primary-text-color: #010101;
 $secondary-text-color: #898989;
 $secondary-text-color_tint: #313841;
 $icons-color: $primary-text-color;
-$content-width: 100vw * 0.7;
+$content-width: 941px;
 
 %section-title {
     font-family: $basic-font-stack;
@@ -143,8 +143,7 @@ header {
 $header-height: 70px;
 
 .header-inner {
-    max-width: $content-width;
-    width: 100%;
+    width: $content-width;
     height: $header-height;
     padding: 40px 0 0;
     display: flex;
@@ -197,18 +196,16 @@ $header-height: 70px;
 }
 
 .intro-inner {
-    max-width: $content-width;
-    width: 100%;
-    height: calc(100vh - $header-height);
-    margin: 0;
+    width: 510px;
+    height: 740px;
     // padding: 0 $content-width * 0.2;
+    padding: 170px 0 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     .intro__heading {
-        max-width: $content-width * 0.5;
         font-family: $basic-font-stack;
         font-weight: bold;
         font-size: 48px;
@@ -218,7 +215,6 @@ $header-height: 70px;
     }
 
     .intro__subtitle {
-        max-width: $content-width * 0.4;
         @extend %section-subtitle;
         color: $primary-text-color;
         text-align: center;
@@ -226,13 +222,13 @@ $header-height: 70px;
     }
 
     .intro__btn {
-        width: 20%;
-        height: 2.5em;
+        width: 255px;
+        height: 50px;
         border: 3px solid $primary-text-color;
         text-transform: uppercase;
         text-decoration: none;
         text-align: center;
-        line-height: 2.5em;
+        line-height: 50px;
         @extend %item-title;
         font-weight: bold;
         background: #00000000;
@@ -244,16 +240,15 @@ $header-height: 70px;
 .features {
     display: flex;
     justify-content: center;
-    height: 100vh;
 }
 
 .features-inner {
-    max-width: $content-width;
+    width: $content-width;
+    padding: 90px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    margin: 0;
 
     .features-heading {
         display: flex;
@@ -261,7 +256,7 @@ $header-height: 70px;
         justify-content: center;
         align-content: center;
         align-items: center;
-        margin: 50px 0 80px;
+        margin: 0 0 5%;
 
         .features-heading__title {
             @extend %section-title;
@@ -284,9 +279,12 @@ $header-height: 70px;
         row-gap: 4em;
         justify-content: center;
         align-content: center;
-        margin: 60px 0 100px;
+        margin: 60px 0 0px;
         padding: 0 20px;
 
+        //иконки можно было бы сделать через псевдоэлементы
+        //но для этого надо поскачивать svg файлы иконок,
+        //тк они представлены изначально как шрифт
         .grid__item {
             text-align: end;
 
@@ -320,16 +318,16 @@ $header-height: 70px;
 .pricing {
     display: flex;
     justify-content: center;
-    height: 100vh;
 }
 
 .pricing-inner {
-    max-width: $content-width;
+    padding: 90px 0;
+    width: $content-width;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    margin: 60px 0;
+    
 
     .pricing-heading {
         display: flex;
@@ -342,7 +340,6 @@ $header-height: 70px;
         .pricing-heading__title {
             @extend %section-title;
             text-align: center;
-            margin-bottom: 10px;
         }
 
         .pricing-heading__subtitle {
@@ -357,88 +354,96 @@ $header-height: 70px;
         display: flex;
         flex-direction: row;
         justify-content: center;
-
-
+        margin: 0 -12.5px;
 
         .pricing__column {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0 15px;
-            width: 280px;
+            padding: 0 12.5px;
 
-            .pricing__column__photo {
-                background-color: #ebebeb;
-                border-radius: 50%;
-                width: 100px;
-                height: 100px;
-                text-align: center;
-                line-height: 100px;
-
-                i {
-                    font-size: 40px;
-                    color: $primary-text-color;
-                    vertical-align: middle;
-
+            .column__item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 280px;
+    
+                .pricing__column__photo {
+                    background-color: #ebebeb;
+                    border-radius: 50%;
+                    width: 100px;
+                    height: 100px;
+                    text-align: center;
+                    line-height: 100px;
+    
+                    i {
+                        font-size: 40px;
+                        color: $primary-text-color;
+                        vertical-align: middle;
+    
+                    }
+    
                 }
-
-            }
-
-
-            .pricing__column__text {
-                text-align: center;
-                margin: 20px 0;
-
-                h3 {
-                    @extend %item-title;
-                    margin: 0px 0 20px;
-                }
-
-                h4 {
-                    @extend %item-title_extra;
-                    padding: 0 30px;
-                }
-            }
-
-
-            .pricing__column__price {
-                text-align: center;
-
-                .price {
-                    @extend %section-title;
-                    text-transform: uppercase;
-
-                    &::after {
-                        display: block;
-                        content: "";
-                        background: $primary-text-color;
-                        height: 2px;
-                        width: 50px;
-                        margin: 8px auto;
+    
+    
+                .pricing__column__text {
+                    
+                    margin: 20px 0;
+                    flex:1 1 auto;
+    
+                    h3 {
+                        @extend %item-title;
+                        margin: 0px 0 20px;
+                        text-align: center;
+                    }
+    
+                    h4 {
+                        @extend %item-title_extra;
+                        padding: 0 30px;
+                        text-align: justify;
                     }
                 }
-
-                .limit {
-                    @extend %item-title_extra;
+    
+    
+                .pricing__column__price {
+                    text-align: center;
+    
+                    .price {
+                        @extend %section-title;
+                        text-transform: uppercase;
+    
+                        &::after {
+                            display: block;
+                            content: "";
+                            background: $primary-text-color;
+                            height: 2px;
+                            width: 50px;
+                            margin: 8px auto;
+                        }
+                    }
+    
+                    .limit {
+                        @extend %item-title_extra;
+                    }
                 }
+    
+                .pricing__column__btn {
+                    width: 55%;
+                    height: 2.5em;
+                    border: 3px solid $primary-text-color;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    text-align: center;
+                    line-height: 2.5em;
+                    @extend %item-title;
+                    font-size: 16px;
+                    background: #00000000;
+                    margin-top: 25px;
+                    padding: 0 15px;
+                }
+                
             }
-
-            .pricing__column__btn {
-                width: 55%;
-                height: 2.5em;
-                border: 3px solid $primary-text-color;
-                text-transform: uppercase;
-                text-decoration: none;
-                text-align: center;
-                line-height: 2.5em;
-                @extend %item-title;
-                font-size: 16px;
-                background: #00000000;
-                margin-top: 25px;
-                padding: 0 15px;
-            }
+            
+    
         }
-
         & .pricing__column:nth-child(2) {
             .pricing__column__photo {
                 background-color: $primary-text-color;
