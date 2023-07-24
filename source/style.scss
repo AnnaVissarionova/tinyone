@@ -597,6 +597,7 @@ $header-height: 70px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: 90px 0 70px;
 
         .team-heading {
             display: flex;
@@ -660,4 +661,292 @@ $header-height: 70px;
         }
     }
 
+}
+
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+
+    .stats-inner {
+        width: $content-width;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 90px 0 70px;
+        .stats-heading {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            margin: 0px 0 80px;
+
+            .heading__title {
+                @extend %section-title;
+                text-align: center;
+            }
+
+            .heading__subtitle {
+                @extend %section-subtitle;
+                width: 70%;
+                text-align: center;
+                margin: 10px 0 0;
+            }
+        }
+
+        .statistics-container {
+            .statistics__row {
+                display: flex;
+                justify-content: center;
+                margin: 0 -45px;
+                .statistics__column {
+                    margin: 0 45px;
+                    .statistics__item {
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+                        i {font-size: 45px;}
+                        .number {
+                            @extend %item-title;
+                            padding-top:20px;
+                        }
+                        .stat {
+                            @extend %item-title_extra;
+                        }
+                    }
+                }
+            }
+        }
+
+        .testimonial-container {
+            padding: 90px 0 0;
+            .testimonial__column {
+                    .testimonial__item {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        img {
+                            width: 104px;
+                            height: 104px;
+                        }
+                        .name {
+                            padding-top: 15px;
+                            @extend %item-title;
+                        }
+                        .job {
+                            padding-top: 8px;
+                            padding-bottom: 36px;
+                            @extend %item-title_extra;
+                        }
+                        .quote-container {
+                            display: flex;
+                            flex-direction: row;
+                            justify-items:start;
+                            .quote {
+                                @extend %section-subtitle;
+                                text-align: center;
+                                width: 475px;
+                            }
+                            .quote_left {
+                                margin-right: 56px;
+                                align-self:start;
+                                font-size: 25px;
+                                color:$secondary-text-color;
+                            }
+                            .quote_right {
+                                margin-left: 56px;
+                                align-self:end;
+                                font-size: 25px;
+                                color:$secondary-text-color;
+                            }
+
+                        }
+
+                        
+                    }
+            }
+        }
+
+
+    }
+}
+
+.intouch-container {
+    display: flex;
+    justify-content: center;
+
+    .intouch-inner {
+        width: $content-width;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 90px 0 70px;
+        .intouch-heading {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            margin: 0px 0 80px;
+
+            .heading__title {
+                @extend %section-title;
+                text-align: center;
+            }
+
+            .heading__subtitle {
+                @extend %section-subtitle;
+                width: 70%;
+                text-align: center;
+                margin: 10px 0 0;
+            }
+        }
+
+        .contacts-container {
+            .contacts__row {
+                display: flex;
+                justify-content: center;
+                margin: 0 -41.5px;
+                padding-bottom: 56px;
+                .contacts__column {
+                    margin: 0 41.5px;
+                    .contacts__item {
+                        width: 160px;
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+                        i {font-size: 25px;}
+                        .title {
+                            padding-top: 20px;
+                            @extend %item-title;
+                        }
+                        .subtitle {
+                            @extend %item-title_extra;
+                        }
+                    }
+                }
+            }
+        }
+
+        .form-container {
+            .form__column {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                input, textarea {
+                    @extend %item-title_extra;
+                    margin-bottom: 25px;
+                    width: 480px;
+                    height: 55px;
+                    padding: 10px;
+                    border: 2px solid $primary-text-color;
+                }
+
+                textarea {
+                    height: 207px;
+                    resize: none;
+                }
+
+                .form__column__btn {
+                    width: 170px;
+                    height: 51px;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    text-align: center;
+                    line-height: 51px;
+                    @extend %item-title;
+                    font-weight: 400;
+                    font-size: 16px;
+                    background: $primary-text-color;
+                    color: white;
+                    margin-top: 25px;
+                    padding: 0 15px;
+                }
+
+            }
+        }
+    }
+}
+
+.footer-container {
+    background-color: $primary-text-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 90px 0 70px;
+    .footer-heading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        margin: 0px 0 80px;
+
+        .heading__title {
+            @extend %section-title;
+            color: white;
+            text-align: center;
+        }
+
+        .heading__subtitle {
+            @extend %section-subtitle;
+            width: 70%;
+            text-align: center;
+            margin: 10px 0 0;
+        }
+    }
+    .footer__form {
+        display: flex;
+        input {
+            width: 597px;
+            height: 51px;
+            padding: 10px 15px;
+            @extend %item-title_extra;
+        }
+        .footer__form__btn {
+            width: 170px;
+            height: 51px;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            line-height: 51px;
+            @extend %item-title;
+            font-size: 19px;
+            background: white;
+            color: $primary-text-color;
+            margin-left: 10px;
+            padding: 0 15px;
+        }
+
+    }
+
+    .navigation {
+        display: flex;
+        margin-top: 110px;
+        .info__column {
+            margin-right: 120px;
+            display: flex;
+            flex-direction: column;
+            @extend %item-title_extra;
+            color: white;
+            p {
+                margin-bottom: 10px;
+            }
+        }
+        .nav__row {
+            display: flex;
+            margin: 0 -45px;
+            .nav__column {
+                padding: 0 45px;
+                .column__container {
+                    display: flex;
+                    flex-direction: column;
+                    @extend %item-title_extra;
+                    color: white;
+                }
+            }
+        }
+    }
 }
