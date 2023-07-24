@@ -327,7 +327,7 @@ $header-height: 70px;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    
+
 
     .pricing-heading {
         display: flex;
@@ -365,7 +365,7 @@ $header-height: 70px;
                 flex-direction: column;
                 align-items: center;
                 width: 280px;
-    
+
                 .pricing__column__photo {
                     background-color: #ebebeb;
                     border-radius: 50%;
@@ -373,43 +373,43 @@ $header-height: 70px;
                     height: 100px;
                     text-align: center;
                     line-height: 100px;
-    
+
                     i {
                         font-size: 40px;
                         color: $primary-text-color;
                         vertical-align: middle;
-    
+
                     }
-    
+
                 }
-    
-    
+
+
                 .pricing__column__text {
-                    
+
                     margin: 20px 0;
-                    flex:1 1 auto;
-    
+                    flex: 1 1 auto;
+
                     h3 {
                         @extend %item-title;
                         margin: 0px 0 20px;
                         text-align: center;
                     }
-    
+
                     h4 {
                         @extend %item-title_extra;
                         padding: 0 30px;
                         text-align: justify;
                     }
                 }
-    
-    
+
+
                 .pricing__column__price {
                     text-align: center;
-    
+
                     .price {
                         @extend %section-title;
                         text-transform: uppercase;
-    
+
                         &::after {
                             display: block;
                             content: "";
@@ -419,12 +419,12 @@ $header-height: 70px;
                             margin: 8px auto;
                         }
                     }
-    
+
                     .limit {
                         @extend %item-title_extra;
                     }
                 }
-    
+
                 .pricing__column__btn {
                     width: 55%;
                     height: 2.5em;
@@ -439,11 +439,12 @@ $header-height: 70px;
                     margin-top: 25px;
                     padding: 0 15px;
                 }
-                
+
             }
-            
-    
+
+
         }
+
         & .pricing__column:nth-child(2) {
             .pricing__column__photo {
                 background-color: $primary-text-color;
@@ -451,6 +452,210 @@ $header-height: 70px;
                 i {
                     color: white;
                 }
+            }
+        }
+    }
+
+}
+
+
+.works-container {
+    display: flex;
+    justify-content: center;
+
+    .works__inner {
+        padding: 90px 0 70px;
+        width: $content-width;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+
+        .works__heading {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            margin: 0px 0 80px;
+
+            .heading__title {
+                @extend %section-title;
+                text-align: center;
+            }
+
+            .heading__subtitle {
+                @extend %section-subtitle;
+                width: 70%;
+                text-align: center;
+                margin: 10px 0 0;
+            }
+        }
+
+        .works-examples {
+            .examples__row {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 20px -10px;
+
+                .examples__column {
+                    padding: 20px 10px;
+
+                    .examples__item {
+                        display: flex;
+                        flex-direction: column;
+
+                        .item__photo {
+                            position: relative;
+
+                            img {
+                                width: 220px;
+                                height: 220px;
+                                background-color: #222222;
+                            }
+
+                            .photo__statistic {
+                                width: 100%;
+                                position: absolute;
+                                bottom: 10px;
+                                display: flex;
+                                flex-direction: row;
+                                background: rgba(128, 128, 128, 0.8);
+                                padding: 7px 10px;
+                                justify-content: space-between;
+
+                                .photo__views,
+                                time {
+                                    @extend %item-subtitle;
+                                    position: relative;
+
+                                    color: black;
+                                }
+
+                                .photo__views {
+                                    padding-left: 20px;
+                                }
+
+                                .photo__views::before {
+                                    display: inline-block;
+                                    position: absolute;
+                                    content: "";
+                                    width: 15px;
+                                    height: 15px;
+                                    top: 0;
+                                    left: 0;
+                                    background: url(../assets/icons/eye-regular.png) 0 0 no-repeat;
+                                    background-size: 100%;
+                                }
+
+                                time {
+                                    padding-right: 20px;
+                                }
+
+                                time::after {
+                                    display: inline-block;
+                                    position: absolute;
+                                    content: "";
+                                    width: 13px;
+                                    height: 13px;
+                                    top: 0;
+                                    right: 0;
+                                    background: url(../assets/icons/clock-regular.png) 0 0 no-repeat;
+                                    background-size: 100%;
+                                }
+                            }
+                        }
+
+                        .item__text {
+                            padding: 15px 0 0;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            .item__title {
+                                @extend %item-title;
+                            }
+
+                            .item__subtitle {
+                                padding: 5px 0 0;
+                                @extend %item-subtitle;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.team-container {
+    display: flex;
+    justify-content: center;
+
+    .team-inner {
+        width: $content-width;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .team-heading {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            margin: 0px 0 80px;
+
+            .heading__title {
+                @extend %section-title;
+                text-align: center;
+            }
+
+            .heading__subtitle {
+                @extend %section-subtitle;
+                width: 70%;
+                text-align: center;
+                margin: 10px 0 0;
+            }
+        }
+
+        .team-profiles {
+            .profiles__row {
+                display: flex;
+                justify-content: center;
+                margin: 0 -38.5px;
+                .profiles__column {
+                    padding: 0 38.5px;
+                    .profiles__item {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .item__photo {
+                            width: 128px;
+                            height: 128px;
+                        }
+                        .item__text {
+                            padding-top: 42px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            text-align: center;
+                            .profile__name {@extend %item-title;}
+                            .profile__job {@extend %item-title_extra; padding-top: 12px}
+                            .profile__subtitle {@extend %item-subtitle; padding-top: 18px}
+                        }
+                        .item__socials {
+                            padding: 12px;
+                            display: flex;
+                            i{
+                                font-size: 18px;
+                                padding: 0 8px ;
+                            }
+                        }
+                    }
+                }
+
+
             }
         }
     }
